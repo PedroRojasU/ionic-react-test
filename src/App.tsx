@@ -1,9 +1,6 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
-
+import { IonApp, IonHeader, IonContent, IonToolbar, IonTitle, IonGrid, IonRow, IonCol, IonItem, IonLabel, IonInput, IonButton, IonIcon } from '@ionic/react';
+import { calculatorOutline, refreshOutline } from 'ionicons/icons';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -25,12 +22,60 @@ import './theme/variables.css';
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/home" component={Home} exact={true} />
-        <Route exact path="/" render={() => <Redirect to="/home" />} />
-      </IonRouterOutlet>
-    </IonReactRouter>
+    <IonHeader>
+      <IonToolbar>
+        <IonTitle>
+          BMI Calculator
+        </IonTitle>
+      </IonToolbar>
+    </IonHeader>
+    <IonContent className="ion-padding">
+      <IonGrid>
+        <IonRow>
+          <IonCol>
+            <IonItem>
+              <IonLabel position="floating">
+                Your height
+              </IonLabel>
+              <IonInput>
+
+              </IonInput>
+            </IonItem>
+          </IonCol>
+        </IonRow>
+        <IonRow>
+          <IonCol>
+            <IonItem>
+              <IonLabel position="floating">
+                Your height
+              </IonLabel>
+              <IonInput>
+
+              </IonInput>
+            </IonItem>
+          </IonCol>
+        </IonRow>
+        <IonRow>
+          <IonCol className="ion-text-left">
+            <IonButton>
+              <IonIcon slot="start" icon={calculatorOutline} />
+              Calculate
+            </IonButton>
+          </IonCol>
+          <IonCol className="ion-text-right">
+            <IonButton>
+              <IonIcon slot="start" icon={refreshOutline} />
+              Reset
+            </IonButton>
+          </IonCol>
+        </IonRow>
+        <IonRow>
+          <IonCol>
+
+          </IonCol>
+        </IonRow>
+      </IonGrid>
+    </IonContent>
   </IonApp>
 );
 
