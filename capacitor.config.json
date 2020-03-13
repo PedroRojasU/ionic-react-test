@@ -1,0 +1,8 @@
+{
+    "appId": "com.corvoanalytics",
+    "appName": "BMI Calculator",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "build",
+    "cordova": {}
+}
